@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #050816;
+  --surface: rgba(11, 19, 43, 0.62);
+  --surface-strong: rgba(8, 15, 35, 0.88);
+  --text: #edf4ff;
+  --muted: #aac0ef;
+  --ring: #6b7cff;
+  --accent: #00f0ff;
+  --accent-alt: #ff00d4;
+  --success: #3cff91;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(0, 240, 255, 0.17), transparent 35%),
+    radial-gradient(circle at top right, rgba(255, 0, 212, 0.18), transparent 28%),
+    radial-gradient(circle at bottom, rgba(80, 35, 255, 0.18), transparent 25%),
+    linear-gradient(145deg, #030512 0%, #081127 46%, #02040f 100%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.grid-glow {
+  position: relative;
+}
+
+.grid-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(transparent, black 12%, black 88%, transparent);
+  pointer-events: none;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 24px 90px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+}
+
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 10px 10px;
+  mix-blend-mode: soft-light;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.aurora-ring {
+  position: absolute;
+  inset: -20%;
+  background: conic-gradient(from 0deg, rgba(0, 240, 255, 0.7), rgba(255, 0, 212, 0.6), rgba(77, 132, 255, 0.6), rgba(0, 240, 255, 0.7));
+  filter: blur(42px);
+  opacity: 0.55;
+  animation: none;
+}
+
+.floating {
+  animation: none;
+}
+
+.pulse-shadow {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 32px rgba(0, 240, 255, 0.16),
+    0 0 54px rgba(255, 0, 212, 0.12);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
