@@ -1,0 +1,36 @@
+TIMIUSIC acceso local de prueba
+
+Credenciales verificadas en esta base local:
+- usuario: admin
+- clave: admin123
+
+Cliente de prueba creado:
+- usuario: cliente_prueba
+- clave: cliente123
+
+Notas:
+- Este archivo esta en data/ y no se sube al repo.
+- Si borras la base local y no defines ADMIN_DEFAULT_PASSWORD, la clave semilla vuelve a ser admin123.
+
+Como probar subida de musica:
+1. Entra en la web con admin / admin123.
+2. Abre el boton o ruta /admin.
+3. Ve a "Catalogo".
+4. Sube un archivo en "Archivo de audio o video".
+5. Opcionalmente sube portada y visual.
+6. Publica la pista.
+
+Formatos aceptados por el backend:
+- media: .mp3, .m4a, .wav, .ogg, .aac, .mp4, .webm
+- portada: .jpg, .jpeg, .png, .webp
+- visual: .jpg, .jpeg, .png, .webp
+
+Limites:
+- media: 150 MB
+- portada: 5 MB
+- visual: 8 MB
+
+Destino de archivos subidos:
+- public/uploads/media
+- public/uploads/covers
+- public/uploads/visuals
